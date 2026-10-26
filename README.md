@@ -1,22 +1,175 @@
-# UGV Adaptive Training Simulator — Step 7 Scroll-Fixed Analytics
+# UGV Training Simulator
 
-This version fixes the analytics dashboard scrolling. Open the dashboard with **P**.
+A software-based Unmanned Ground Vehicle (UGV) training and assessment project focused on simulated terrain navigation, obstacle handling, recovery behavior, and training performance evaluation.
 
-- Mouse wheel while dashboard is open: scroll analytics content.
-- P: close dashboard.
-- The top dashboard header stays fixed.
-- Recent Training Runs now has a larger table with multiple records.
+## About the Project
 
-Controls in simulator: W/S drive, A/D steer, M autopilot, T adaptive AI, 1/2/3 difficulty, N new terrain, R reset, P analytics, C camera follow, F reset camera, mouse drag orbit/pan, wheel zoom.
+Unmanned Ground Vehicles (UGVs) are used in environments where navigating uneven terrain and avoiding obstacles are important. Evaluating their performance requires a systematic approach to testing navigation, obstacle handling, and recovery under different terrain conditions.
+
+This project explores a software-based approach to UGV training. It provides an environment for experimenting with navigation scenarios, observing vehicle behavior, and evaluating training performance using the features available in the implementation.
+
+The project is developed as part of an academic research and training initiative.
+
+## Objectives
+
+- Develop a software-based environment for UGV training.
+- Explore navigation in challenging terrain conditions.
+- Simulate or evaluate obstacle-handling behavior.
+- Investigate recovery strategies for difficult terrain, including potholes.
+- Organize training observations and performance results.
+- Support systematic evaluation of UGV navigation behavior.
+
+## Key Features
+
+The project focuses on the following areas, depending on the implemented modules:
+
+- **Terrain simulation:** Experiment with different terrain conditions.
+- **Obstacle handling:** Evaluate vehicle behavior around simulated obstacles.
+- **Navigation:** Explore vehicle movement through the training environment.
+- **Recovery behavior:** Investigate methods for recovering from difficult terrain situations.
+- **Training assessment:** Organize training observations and performance indicators.
+- **Result analysis:** Use available output files and visualizations to review training performance.
+
+## Project Workflow
+
+1. Initialize the training environment.
+2. Configure or generate a terrain scenario.
+3. Run the UGV navigation or training process.
+4. Observe obstacle-handling and recovery behavior.
+5. Record available training results.
+6. Analyze the results to identify areas for improvement.
+
+## Technology Stack
+
+The project uses Python and the supporting libraries specified in its dependency file.
+
+| Technology | Purpose |
+|---|---|
+| Python | Core application development |
+| Python libraries | Simulation, processing, and application functionality |
+| CSV | Training data storage, where implemented |
+| GitHub | Source-code management and documentation |
+
+Refer to `requirements.txt` for the actual dependencies used by the project.
+
+## Repository Structure
+
+The repository may contain the following files, depending on the current implementation:
+
+```text
+UGV_Training/
+├── main.py
+├── requirements.txt
+├── run_windows.bat
+├── README.md
+└── .gitignore
+```
+
+- `main.py` — Main application entry point.
+- `requirements.txt` — Required Python packages.
+- `run_windows.bat` — Windows launch script, if provided.
+- `README.md` — Project documentation.
+- `.gitignore` — Files and directories excluded from version control.
+
+## System Requirements
+
+- Windows 10 or Windows 11
+- Python installed on the system
+- Command Prompt or PowerShell
+- Required Python packages
+- Sufficient memory and storage for the application
+
+Actual requirements depend on the libraries and modules used.
+
+## Installation and Execution
+
+### 1. Clone the repository
+
+Replace `YOUR-USERNAME` with your GitHub username.
+
+```bash
+git clone https://github.com/YOUR-USERNAME/UGV_Training.git
+```
+
+### 2. Open the project directory
+
+```bash
+cd UGV_Training
+```
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+### 4. Activate the environment on Windows
+
+```bat
+.venv\Scripts\activate
+```
+
+### 5. Install dependencies
+
+If the repository contains `requirements.txt`, run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 6. Run the application
+
+If `main.py` is the project entry point, run:
+
+```bash
+python main.py
+```
+
+Follow the instructions displayed by the application.
+
+## Expected Outcomes
+
+The project aims to provide a structured way to experiment with UGV training scenarios and assess navigation behavior.
+
+Depending on the implemented functionality, outputs may include:
+
+- Simulated navigation behavior.
+- Observations of obstacle handling.
+- Recovery behavior in challenging terrain.
+- Training records and performance summaries.
+- Data for further analysis and experimentation.
+
+Actual results should be evaluated using the outputs generated by the application.
+
+## Applications
+
+Potential applications include:
+
+- Academic research in unmanned ground vehicles.
+- Robotics and autonomous navigation experimentation.
+- Simulated terrain-handling studies.
+- Training performance evaluation.
+- Development of future intelligent navigation and assessment systems.
+
+## Limitations
+
+- Simulation results may differ from real-world UGV performance.
+- Results depend on the implemented algorithms and training scenarios.
+- Simulated sensing does not necessarily represent measurements from physical sensors.
+- Real-world deployment requires additional validation and testing.
+
+## Future Enhancements
+
+Possible extensions include:
+
+- More realistic terrain scenarios.
+- Improved obstacle detection and avoidance.
+- Advanced recovery strategies.
+- Machine-learning-based performance assessment.
+- Integration with robotics simulation platforms.
+- Enhanced training analytics and reporting.
+- Testing with real-world sensor data or physical UGV hardware.
+
+These are potential enhancements and are not claims of completed functionality.
 
 
-## Terrain obstacle update
-This version adds typed terrain hazards: ROCK, BOULDER, POTHOLE and LOG.
-- Rocks, boulders and logs are solid obstacles and trigger collision/replanning.
-- Potholes are drive-through terrain hazards that slow the UGV and are recorded as terrain hits.
-- Obstacle types are generated deterministically from the terrain seed and increase in variety/count with difficulty.
-- Training CSV analytics now include terrain hazard-hit counts.
-
-### Controls
-W/Up = forward, S/Down = reverse, A/D or Left/Right = steering, M = manual/autopilot,
-1/2/3 = difficulty, N = new terrain seed, P = analytics dashboard, R = reset, F = camera reset.
